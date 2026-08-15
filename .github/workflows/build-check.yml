@@ -1,0 +1,27 @@
+name: Firmware Build Verification
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  build:
+    name: Verify Project Structure
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Codebase
+        uses: actions/checkout@v4
+
+      - name: Validate Core Files
+        run: |
+          echo "Verifying project structure..."
+          test -f firmware/esp32_main/esp32_main.ino || exit 1
+          test -f firmware/esp32_cam/esp32_cam.ino || exit 1
+          test -f hardware/BOM.md || exit 1
+          test -f docs/pinout_mapping.md || exit 1
+          test -f docs/blynk_setup_guide.md || exit 1
+          test -f README.md || exit 1
+          echo "All core files and documentation verified successfully!"

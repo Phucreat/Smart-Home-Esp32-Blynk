@@ -1,0 +1,45 @@
+# Compiled binaries and firmware builds
+*.hex
+*.bin
+*.elf
+*.o
+*.d
+
+# Arduino IDE build directories & temp files
+build/
+.arduino/
+arduino_build/
+arduino_cache/
+
+# PlatformIO
+.pio/
+.pioenvs/
+.piolibdeps/
+.clang_complete
+.gcc-flags.json
+
+# VS Code / IDE settings
+.vscode/
+.idea/
+*.swp
+*~
+
+# Operating System Files
+.DS_Store
+Thumbs.db
+ehthumbs.db
+[Dd]esktop.ini
+
+# Microsoft Office temporary files
+~$*.docx
+~$*.xlsx
+~$*.pptx
+
+# Sensitive configuration files (contains real WiFi passwords / Blynk tokens)
+# Users should copy config.example.h to config.h
+config.h
+credentials.h
+secrets.h
+
+# Large video files (uncomment if you want to keep them local only)
+# *.mp4
